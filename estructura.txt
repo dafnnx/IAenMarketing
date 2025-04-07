@@ -1,0 +1,41 @@
++---app                                    # Aplicación web 
+|   |   app.py
+|   |
+|   +---static
+|   |   +---css
+|   |   |       styles.css                # estilos CSS para una aplicación web, definiendo colores, tipografías, y diseño de componentes como botones, 									tarjetas, modales y secciones
+
+|   |   \---uploads
+|   +---templates
+|   |       analysis_results.html        # resultados del análisis de contenido, incluyendo métricas, sugerencias y visualizaciones interactivas
+|   |       content_detail.html          #detalles de contenido subido, incluyendo métricas, engagement, hashtags
+|   |       content_list.html            #lista de contenido subido, permitiendo buscar, filtrar, gestionar y analizar publicaciones con métricas y acciones
+|   |       dashboard.html               #dashboard interactivo que muestra métricas, gráficos y análisis detallados del rendimiento de contenido en redes sociales con datos estáticos
+|   |       index.html                   #página principal, destacando las características del servicio de análisis de contenido con IA y permitiendo subir archivos para su análisis
+|   |       train_model.html             #interfaz para entrenar un modelo de IA, mostrando el progreso, métricas, configuración y opciones para iniciar o cancelar el entrenamiento
+|   |       upload.html                  #permite a los usuarios subir contenido multimedia, proporcionando detalles como plataforma, tipo, descripción y métricas para su análisis y entrenamiento del modelo de IA
+|
++---data
+|   \---sample
+|           sample_posts.json            #archivo JSON contiene datos de publicaciones en redes sociales, incluyendo plataforma, tipo de contenido, hashtags, métricas de engagement y características de imagen para análisis
+
+|
++---db                                   # Scripts para la base de datos
+|   |   setup_db.py                      #configura una base de datos MongoDB, creando colecciones, índices y guardando la configuración en un archivo JSON para su uso en la aplicación
+|   |
+|   \---config
+|           db_config.json               #archivo JSON contiene la configuración de la base de datos MongoDB, incluyendo el nombre de la base de datos, las colecciones y la cadena de conexión
++---docs
++---models
+|       amps_model.h5                    #archivo .h5 contiene un modelo de aprendizaje profundo preentrenado,  utilizado para análisis o predicciones en la aplicación, almacenado en formato HDF5
+|       preprocessing_info.pkl
+|
++---scripts                              # Scripts de Python para scraping y procesamiento
+|   |   data_utils.py                    # utilidades para procesar datos, conectarse a la base de datos, normalizar características y obtener estadísticas del conjunto de datos para análisis y entrenamiento de modelos
+|   |   evaluate_model.py                #valúa un modelo de aprendizaje profundo utilizando datos de prueba, calcula métricas como MAE, MSE y precisión, y maneja errores devolviendo métricas simuladas si es necesario
+|   |   generate_sample_data.py          # genera datos de muestra para publicaciones en redes sociales, incluyendo métricas, hashtags y características de imagen, los guarda en un archivo JSON y los inserta en una base de datos MongoDB (datos de prueba)
+|   |   load_sample_data.py              # carga datos de muestra desde un archivo JSON y los inserta en la colección "posts" de una base de datos MongoDB, utilizando la configuración almacenada en un archivo JSON
+|   |   preprocess.py                    # clase para preprocesar datos multimedia, como imágenes y videos, extrayendo características clave, calculando métricas de engagement y generando datos listos para modelos de IA
+|   |   preprocess_data.py               # preprocesa datos de publicaciones desde una base de datos MongoDB, escalando métricas, extrayendo características de texto e imagen, y guarda los datos procesados en una nueva colección para su uso en modelos de IA
+|   |   scraper.py                       # 
+|   |   train_model.py                   # entrena un modelo AMPS (Attention-based Multi-modal Popularity prediction System) utilizando datos multimodales (imagen, texto y metadatos) de una base de datos MongoDB, calcula métricas de rendimiento y guarda el modelo entrenado junto con la información de preprocesamiento

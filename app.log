@@ -1,0 +1,611 @@
+2025-03-30 12:49:09,973 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 12:49:09,973 - __main__ - WARNING - Archivos de modelo no encontrados. Se utilizará un modelo simulado.
+2025-03-30 12:49:10,159 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.13:5000
+2025-03-30 12:49:10,159 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 12:49:10,175 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 12:49:17,923 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 12:49:17,923 - __main__ - WARNING - Archivos de modelo no encontrados. Se utilizará un modelo simulado.
+2025-03-30 12:49:17,941 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 12:49:17,949 - werkzeug - INFO -  * Debugger PIN: 170-813-528
+2025-03-30 12:49:23,315 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:23] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 12:49:23,431 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:23] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 12:49:24,121 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:24] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 12:49:24,123 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:24] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 12:49:24,323 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:24] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=9cmtq7ToHgy2sh0dI02k HTTP/1.1" 200 -
+2025-03-30 12:49:24,375 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:24] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 12:49:25,247 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:25] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 12:49:25,278 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:25] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 12:49:25,352 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=9cmtq7ToHgy2sh0dI02k HTTP/1.1[0m" 304 -
+2025-03-30 12:49:37,877 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 12:49:37,920 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 12:49:37,921 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 12:49:38,275 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:38] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=9cmtq7ToHgy2sh0dI02k HTTP/1.1" 200 -
+2025-03-30 12:49:39,121 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:49:39] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 12:52:17,872 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:52:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 12:52:17,944 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:52:17] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 12:52:17,950 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:52:17] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 12:52:18,331 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:52:18] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=9cmtq7ToHgy2sh0dI02k HTTP/1.1[0m" 304 -
+2025-03-30 13:03:16,049 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:03:16,383 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:03:16,406 - __main__ - INFO - Modelo cargado correctamente
+2025-03-30 13:03:16,594 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.13:5000
+2025-03-30 13:03:16,594 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 13:03:16,596 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:03:23,417 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:03:24,207 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:03:24,223 - __main__ - INFO - Modelo cargado correctamente
+2025-03-30 13:03:24,241 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:03:24,245 - werkzeug - INFO -  * Debugger PIN: 170-813-528
+2025-03-30 13:03:24,757 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:03:24,887 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:24] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:03:24,927 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:24] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:03:25,028 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:25] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ljZRnAdYjYEuNA0oMq8U HTTP/1.1" 200 -
+2025-03-30 13:03:29,659 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:03:29,775 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:29] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:03:29,816 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:29] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:03:30,043 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:30] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ljZRnAdYjYEuNA0oMq8U HTTP/1.1" 200 -
+2025-03-30 13:03:30,231 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:03:30] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-30 13:06:00,367 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:06:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:06:00,438 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:06:00] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:06:00,447 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:06:00] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:06:00,799 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:06:00] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=ljZRnAdYjYEuNA0oMq8U HTTP/1.1[0m" 304 -
+2025-03-30 13:09:29,758 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:09:30,098 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:09:30,112 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - INFO - Modelo cargado correctamente
+2025-03-30 13:09:30,130 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 13:09:30,130 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 13:09:52,698 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-30 13:09:52,701 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:09:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:09:52,988 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 603, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-03-30 13:09:53,036 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 607, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 500.html
+2025-03-30 13:09:53,154 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:09:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-03-30 13:09:53,252 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 603, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 607, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 500.html
+2025-03-30 13:09:57,522 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-30 13:09:57,525 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:09:57] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:09:57,536 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 607, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 500.html
+2025-03-30 13:09:57,687 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 603, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-03-30 13:09:57,690 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:09:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-03-30 13:09:57,700 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 603, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 607, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 500.html
+2025-03-30 13:15:12,060 - werkzeug - INFO -  * Detected change in 'D:\\Usuario\\Escritorio\\PROYECTO ESTADIAS\\PROGRAMA\\IA_MK\\CODIGO\\proyecto_analisis_redes\\proyecto_analisis_redes\\app\\app.py', reloading
+2025-03-30 13:15:13,329 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:15:20,538 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:15:20,991 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:15:21,005 - __main__ - INFO - Modelo cargado correctamente
+2025-03-30 13:15:21,021 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:15:21,025 - werkzeug - INFO -  * Debugger PIN: 170-813-528
+2025-03-30 13:17:54,800 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-30 13:17:54,806 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:17:54] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:18:28,688 - proyecto_analisis_redes.proyecto_analisis_redes.app.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py", line 80, in index
+    if db:
+  File "D:\Usuario\Escritorio\PROYECTO ESTADIAS\PROGRAMA\IA_MK\CODIGO\venv\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-30 13:18:29,032 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:18:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:18:58,267 - werkzeug - INFO -  * Detected change in 'D:\\Usuario\\Escritorio\\PROYECTO ESTADIAS\\PROGRAMA\\IA_MK\\CODIGO\\proyecto_analisis_redes\\proyecto_analisis_redes\\app\\app.py', reloading
+2025-03-30 13:19:00,359 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:19:12,519 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:19:13,250 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:19:13,277 - __main__ - INFO - Modelo cargado correctamente
+2025-03-30 13:19:13,306 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:19:13,314 - werkzeug - INFO -  * Debugger PIN: 170-813-528
+2025-03-30 13:19:14,211 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:19:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:19:14,944 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:19:14] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:19:14,946 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:19:14] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:19:15,085 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:19:15] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=MZZMOpXxRbLyTXo4XgLC HTTP/1.1" 200 -
+2025-03-30 13:19:16,296 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:19:16] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-30 13:19:38,873 - werkzeug - INFO -  * Detected change in 'D:\\Usuario\\Escritorio\\PROYECTO ESTADIAS\\PROGRAMA\\IA_MK\\CODIGO\\proyecto_analisis_redes\\proyecto_analisis_redes\\app\\app.py', reloading
+2025-03-30 13:19:40,616 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:19:53,153 - __main__ - INFO - Conexión a MongoDB establecida correctamente
+2025-03-30 13:19:54,078 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-30 13:19:54,100 - __main__ - INFO - Modelo cargado correctamente
+2025-03-30 13:19:54,127 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:19:54,138 - werkzeug - INFO -  * Debugger PIN: 170-813-528
+2025-03-30 13:20:17,513 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:20:17,838 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:17] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:20:17,845 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:17] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:20:17,878 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:17] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=dta9o9Ju7oOvhFf50nWh HTTP/1.1" 200 -
+2025-03-30 13:20:42,452 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:42] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:20:42,509 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:42] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:20:42,511 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:42] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:20:42,556 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:20:42] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=dta9o9Ju7oOvhFf50nWh HTTP/1.1[0m" 304 -
+2025-03-30 13:23:54,181 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:54] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-30 13:23:54,239 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:54] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-30 13:23:54,244 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:54] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-30 13:23:54,296 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:54] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=dta9o9Ju7oOvhFf50nWh HTTP/1.1[0m" 304 -

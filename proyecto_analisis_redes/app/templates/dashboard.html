@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Análisis General de Contenido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+            
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f8fa;
+            color: var(--dark-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-content {
+            padding: 1.5rem 0 4rem;
+        }
+        
+        .stats-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .stats-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .stats-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .stats-card .display-6 {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .chart-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: none;
+        }
+        
+        .chart-card .card-title {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chart-card .card-title i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        
+        .hashtag-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
+        }
+        
+        .hashtag-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .hashtag-item .badge {
+            background-color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .hashtag-name {
+            font-weight: 500;
+            color: #444;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        footer h4, footer h5 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .content-filters {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-badge {
+            background-color: #e9ecef;
+            color: #495057;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-badge.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .filter-badge:hover {
+            background-color: #dee2e6;
+        }
+        
+        .filter-badge.active:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .metrics-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .metrics-table td {
+            vertical-align: middle;
+        }
+        
+        .summary-metric {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-metric-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(67, 97, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .summary-metric-icon i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        
+        .summary-metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+        
+        .summary-metric-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin: 0;
+        }
+        
+        .date-range-picker {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            background-color: white;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .date-range-picker:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .date-range-picker i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .performance-indicator {
+            display: flex;
+            align-items: center;
+        }
+        
+        .performance-indicator i.fa-arrow-up {
+            color: #2ecc71;
+            margin-right: 0.25rem;
+        }
+        
+        .performance-indicator i.fa-arrow-down {
+            color: #e74c3c;
+            margin-right: 0.25rem;
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-chart-line me-2"></i>Servicio de analítica avanzada e IA en marketing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/upload">Subir Contenido</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-2">Dashboard de Análisis</h1>
+                    <p class="mb-0 lead">Métricas y análisis detallado del rendimiento de tu contenido en redes sociales</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button class="date-range-picker">
+                        <i class="far fa-calendar-alt"></i>Últimos 30 días <i class="fas fa-chevron-down ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <!-- Resumen Métricas -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="card-body text-center">
+                            <div class="icon">
+                                <i class="fas fa-file-image"></i>
+                            </div>
+                            <h5>Contenidos Analizados</h5>
+                            <p class="display-6 mb-0">{{ stats.total_contents }}</p>
+                            <div class="performance-indicator mt-2">
+                                <i class="fas fa-arrow-up"></i>
+                                <span class="text-success">8.5%</span>
+                                <small class="text-muted ms-1">vs mes anterior</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="card-body text-center">
+                            <div class="icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <h5>Sentimientos Positivos</h5>
+                            <p class="display-6 mb-0">{{ stats.positive_sentiments }}</p>
+                            <div class="performance-indicator mt-2">
+                                <i class="fas fa-arrow-up"></i>
+                                <span class="text-success">12.3%</span>
+                                <small class="text-muted ms-1">vs mes anterior</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="card-body text-center">
+                            <div class="icon">
+                                <i class="fas fa-thumbs-down"></i>
+                            </div>
+                            <h5>Sentimientos Negativos</h5>
+                            <p class="display-6 mb-0">{{ stats.negative_sentiments }}</p>
+                            <div class="performance-indicator mt-2">
+                                <i class="fas fa-arrow-down"></i>
+                                <span class="text-danger">3.7%</span>
+                                <small class="text-muted ms-1">vs mes anterior</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="card-body text-center">
+                            <div class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h5>Engagement Promedio</h5>
+                            <p class="display-6 mb-0">4.8%</p>
+                            <div class="performance-indicator mt-2">
+                                <i class="fas fa-arrow-up"></i>
+                                <span class="text-success">2.1%</span>
+                                <small class="text-muted ms-1">vs mes anterior</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="content-filters mb-4">
+                <h5 class="mb-3"><i class="fas fa-filter me-2"></i>Filtrar por:</h5>
+                <div>
+                    <span class="filter-badge active">Todos</span>
+                    <span class="filter-badge">Instagram</span>
+                    <span class="filter-badge">Facebook</span>
+                    <span class="filter-badge">Twitter</span>
+                </div>
+                <hr class="my-3">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label class="form-label">Tipo de contenido</label>
+                        <select class="form-select">
+                            <option selected>Todos los tipos</option>
+                            <option>Imagen</option>
+                            <option>Video</option>
+                         
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label class="form-label">Sentimiento</label>
+                        <select class="form-select">
+                            <option selected>Todos los sentimientos</option>
+                            <option>Positivo</option>
+                            <option>Neutro</option>
+                            <option>Negativo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Ordenar por</label>
+                        <select class="form-select">
+                            <option selected>Engagement (mayor a menor)</option>
+                            <option>Fecha (más reciente)</option>
+                            <option>Fecha (más antiguo)</option>
+                            <option>Sentimiento (positivo a negativo)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Gráficos principales -->
+                <div class="col-lg-8">
+                    <!-- Engagement por Día -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="fas fa-chart-line me-2"></i>Evolución del Engagement</h5>
+                        <div class="chart-container">
+                            <canvas id="engagementTrendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Rendimiento por Red Social -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="fas fa-share-alt me-2"></i>Rendimiento por Red Social</h5>
+                        <div class="chart-container">
+                            <canvas id="socialNetworkChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Tipo de Contenido -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="fas fa-photo-video me-2"></i>Rendimiento por Tipo de Contenido</h5>
+                        <div class="chart-container">
+                            <canvas id="contentTypeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel lateral -->
+                <div class="col-lg-4">
+                    <!-- Sentimientos -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="fas fa-smile me-2"></i>Distribución de Sentimientos</h5>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="sentimentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Hashtags Más Utilizados -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="fas fa-hashtag me-2"></i>Hashtags Más Utilizados</h5>
+                        <div class="hashtags-container">
+                            <div class="hashtag-item">
+                                <span class="hashtag-name">#marketing</span>
+                                <span class="badge">24</span>
+                            </div>
+                            <div class="hashtag-item">
+                                <span class="hashtag-name">#socialmedia</span>
+                                <span class="badge">18</span>
+                            </div>
+                            <div class="hashtag-item">
+                                <span class="hashtag-name">#branding</span>
+                                <span class="badge">15</span>
+                            </div>
+                            <div class="hashtag-item">
+                                <span class="hashtag-name">#contenido</span>
+                                <span class="badge">12</span>
+                            </div>
+                            <div class="hashtag-item">
+                                <span class="hashtag-name">#digitalmarketing</span>
+                                <span class="badge">10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horas Óptimas de Publicación -->
+                    <div class="chart-card">
+                        <h5 class="card-title"><i class="far fa-clock me-2"></i>Mejores Horas para Publicar</h5>
+                        <div class="chart-container" style="height: 200px;">
+                            <canvas id="optimalTimeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Últimos Contenidos Analizados -->
+            <div class="chart-card mt-4">
+                <h5 class="card-title"><i class="fas fa-history me-2"></i>Últimos Contenidos Analizados</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover metrics-table">
+                        <thead>
+                            <tr>
+                                <th>Contenido</th>
+                                <th>Red Social</th>
+                                <th>Fecha</th>
+                                <th>Sentimiento</th>
+                                <th>Engagement</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 50px; height: 50px; background-color: #e9ecef; border-radius: 8px;" class="me-3 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-image text-secondary"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 fw-medium">Campaña primavera 2025</p>
+                                            <small class="text-muted">Imagen + 3 hashtags</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><i class="fab fa-instagram text-danger me-2"></i>Instagram</td>
+                                <td>03/04/2025</td>
+                                <td><span class="badge bg-success">Positivo</span></td>
+                                <td>
+                                    <div>4.8%</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye me-1"></i>Ver</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 50px; height: 50px; background-color: #e9ecef; border-radius: 8px;" class="me-3 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-video text-secondary"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 fw-medium">Tutorial de producto</p>
+                                            <small class="text-muted">Video + 5 hashtags</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><i class="fab fa-facebook text-primary me-2"></i>Facebook</td>
+                                <td>02/04/2025</td>
+                                <td><span class="badge bg-warning text-dark">Neutro</span></td>
+                                <td>
+                                    <div>3.2%</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye me-1"></i>Ver</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 50px; height: 50px; background-color: #e9ecef; border-radius: 8px;" class="me-3 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-image text-secondary"></i>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 fw-medium">Anuncio promocional</p>
+                                            <small class="text-muted">Imagen + 2 hashtags</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><i class="fab fa-twitter text-info me-2"></i>Twitter</td>
+                                <td>01/04/2025</td>
+                                <td><span class="badge bg-danger">Negativo</span></td>
+                                <td>
+                                    <div>1.7%</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye me-1"></i>Ver</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-primary"><i class="fas fa-list me-2"></i>Ver todos los contenidos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Servicio de analítica avanzada e IA en marketing</h4>
+                    <p>Una solución avanzada de análisis mediante IA para maximizar el impacto de tus campañas en redes sociales.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                    
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ia@ciiia.mx</li>
+                        <li><i class="fas fa-phone me-2"></i>(123) 456-7890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="background-color: rgba(255,255,255,0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Servicio de analítica avanzada e IA en marketing. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //Datos para los gráficos
+        const sentimentData = {
+            labels: ['Positivo', 'Neutro', 'Negativo'],
+            datasets: [{
+                data: [65, 25, 10],
+                backgroundColor: ['#2ecc71', '#f1c40f', '#e74c3c'],
+                borderWidth: 0
+            }]
+        };
+            //Datos para el gráfico de tendencia de engagement
+        const engagementTrendData = {
+            labels: ['1 Mar', '5 Mar', '10 Mar', '15 Mar', '20 Mar', '25 Mar', '30 Mar', '1 Abr'],
+            datasets: [{
+                label: 'Engagement %',
+                data: [2.5, 3.1, 2.8, 3.6, 4.2, 3.8, 4.5, 4.8],
+                borderColor: '#4361ee',
+                backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                tension: 0.4,
+                fill: true
+            }]
+        };
+
+        const socialNetworkData = {
+            labels: ['Instagram', 'Facebook', 'Twitter'],
+            datasets: [{
+                label: 'Engagement promedio',
+                data: [5.2, 3.8, 2.9, 4.1, 6.7],
+                backgroundColor: [
+                    'rgba(225, 48, 108, 0.7)',
+                    'rgba(24, 119, 242, 0.7)',
+                    'rgba(29, 161, 242, 0.7)',
+                    'rgba(0, 119, 181, 0.7)',
+                    'rgba(69, 176, 227, 0.7)'
+                ],
+                borderColor: [
+                    'rgb(225, 48, 108)',
+                    'rgb(24, 119, 242)',
+                    'rgb(29, 161, 242)',
+                    'rgb(0, 119, 181)',
+                    'rgb(69, 176, 227)'
+                ],
+                borderWidth: 1
+            }]
+        };
+            //Datos para el gráfico de tipo de contenido
+        const contentTypeData = {
+            labels: ['Imágenes', 'Videos'],
+            datasets: [{
+                label: 'Engagement promedio',
+                data: [3.8, 5.4, 4.7, 2.1],
+                backgroundColor: 'rgba(67, 97, 238, 0.7)',
+                borderColor: 'rgb(67, 97, 238)',
+                borderWidth: 1
+            }]
+        };
+
+        const optimalTimeData = {
+            labels: ['9am', '12pm', '3pm', '6pm', '9pm'],
+            datasets: [{
+                label: 'Engagement promedio',
+                data: [3.2, 4.1, 3.8, 5.3, 4.7],
+                backgroundColor: 'rgba(67, 97, 238, 0.7)',
+                borderColor: 'rgb(67, 97, 238)',
+                borderWidth: 1
+            }]
+        };
+
+        //Crear gráficos
+        const sentimentChart = new Chart(
+            document.getElementById('sentimentChart'),
+            {
+                type: 'pie',
+                data: sentimentData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            }
+        );
+                //Crear gráfico de tendencia de engagement
+        const engagementTrendChart = new Chart(
+            document.getElementById('engagementTrendChart'),
+            {
+                type: 'line',
+                data: engagementTrendData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+                //Crear gráfico de rendimiento por red social
+        const socialNetworkChart = new Chart(
+            document.getElementById('socialNetworkChart'),
+            {
+                type: 'bar',
+                data: socialNetworkData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+                //Crear gráfico de tipo de contenido
+        const contentTypeChart = new Chart(
+            document.getElementById('contentTypeChart'),
+            {
+                type: 'bar',
+                data: contentTypeData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+                //Crear gráfico de horas óptimas
+        const optimalTimeChart = new Chart(
+            document.getElementById('optimalTimeChart'),
+            {
+                type: 'line',
+                data: optimalTimeData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+        //Funcionalidad para los filtros
+        document.querySelectorAll('.filter-badge').forEach(badge => {
+            badge.addEventListener('click', function() {
+                document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

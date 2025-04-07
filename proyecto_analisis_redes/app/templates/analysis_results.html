@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Análisis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">IA Análisis de Redes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('upload_content') }}">Subir Contenido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('content_list') }}">Ver Contenido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('analyze_content') }}">Analizar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card content-card mb-4">
+                    <div class="card-header py-3 bg-gradient">
+                        <h2 class="mb-0"><i class="fas fa-chart-line me-2"></i>Resultados del Análisis</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <!-- Contenido analizado -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header">
+                                        <h4>Contenido Analizado</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center mb-3">
+                                            {% if result.file_path.endswith(('.jpg', '.jpeg', '.png')) %}
+                                                <img src="{{ url_for('static', filename='uploads/' + result.file_path) }}" class="img-fluid rounded analysis-image" alt="Contenido analizado">
+                                            {% elif result.file_path.endswith(('.mp4', '.mov')) %}
+                                                <video class="w-100 rounded analysis-video" controls>
+                                                    <source src="{{ url_for('static', filename='uploads/' + result.file_path) }}" type="video/mp4">
+                                                    Tu navegador no soporta videos.
+                                                </video>
+                                            {% endif %}
+                                        </div>
+                                        
+                                        <div class="content-details">
+                                            <h5>Detalles del Contenido</h5>
+                                            <p><strong>Plataforma:</strong> {{ result.platform }}</p>
+                                            {% if result.caption %}
+                                                <p><strong>Descripción:</strong> {{ result.caption }}</p>
+                                            {% endif %}
+                                            {% if result.hashtags and result.hashtags|length > 0 %}
+                                                <p><strong>Hashtags:</strong> 
+                                                    {% for tag in result.hashtags %}
+                                                        <span class="badge bg-secondary">#{{ tag }}</span>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                            {% if result.account %}
+                                                <p><strong>Cuenta:</strong> {{ result.account }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Engagement Score -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header">
+                                        <h4>Predicción de Engagement</h4>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <div class="engagement-meter-large mb-3">
+                                            <div class="engagement-meter-bg">
+                                                <div class="engagement-meter-fill 
+                                                    {{ 'bg-danger' if engagement_level.class == 'danger' else 
+                                                       'bg-warning' if engagement_level.class == 'warning' else 
+                                                       'bg-success' }}"
+                                                    style="width: {{ result.engagement_prediction * 100 }}%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <h3 class="engagement-score 
+                                            {{ 'text-danger' if engagement_level.class == 'danger' else 
+                                               'text-warning' if engagement_level.class == 'warning' else 
+                                               'text-success' }}">
+                                            {{ "%.1f"|format(result.engagement_prediction * 100) }}%
+                                        </h3>
+                                        <p class="engagement-level">Nivel de engagement: <strong>{{ engagement_level.level|capitalize }}</strong></p>
+                                        
+                                        <div class="engagement-interpretation mt-4">
+                                            <h5>¿Qué significa?</h5>
+                                            {% if engagement_level.class == 'danger' %}
+                                                <p>Esta publicación podría tener dificultades para generar interacción. Revisa las sugerencias para mejorar.</p>
+                                            {% elif engagement_level.class == 'warning' %}
+                                                <p>Esta publicación tiene potencial pero puede optimizarse. Las sugerencias te ayudarán a incrementar el engagement.</p>
+                                            {% else %}
+                                                <p>¡Excelente trabajo! Esta publicación tiene alto potencial de engagement. Sigue nuestras sugerencias para maximizar su alcance.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sugerencias -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4><i class="fas fa-lightbulb me-2"></i>Sugerencias para Mejorar</h4>
+                            </div>
+                            <div class="card-body">
+                                {% if result.suggestions and result.suggestions|length > 0 %}
+                                    <div class="suggestions-list">
+                                        {% for suggestion in result.suggestions %}
+                                            <div class="suggestion-item">
+                                                <i class="fas fa-check-circle text-success me-2"></i>
+                                                <span>{{ suggestion }}</span>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <p class="text-muted">No hay sugerencias disponibles para este contenido.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Análisis Avanzado -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4><i class="fas fa-microscope me-2"></i>Análisis Avanzado</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Análisis Visual -->
+                                    <div class="col-md-6 mb-3">
+                                        <h5>Elementos Visuales</h5>
+                                        {% if result.analysis_results and result.analysis_results.visual_elements %}
+                                            <div class="visual-elements">
+                                                {% for element in result.analysis_results.visual_elements %}
+                                                    <span class="badge bg-primary me-2 mb-2">{{ element }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            <p class="text-muted">No se detectaron elementos visuales específicos.</p>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <!-- Análisis de Sentimiento -->
+                                    <div class="col-md-6 mb-3">
+                                        <h5>Análisis de Sentimiento</h5>
+                                        {% if result.analysis_results and result.analysis_results.sentiment_analysis %}
+                                            <div class="sentiment-analysis">
+                                                <p>
+                                                    <span class="fw-bold">Tono:</span> 
+                                                    <span class="
+                                                        {{ 'text-success' if result.analysis_results.sentiment_analysis.category == 'positivo' else 
+                                                           'text-danger' if result.analysis_results.sentiment_analysis.category == 'negativo' else 
+                                                           'text-muted' }}">
+                                                        {{ result.analysis_results.sentiment_analysis.category|capitalize }}
+                                                    </span>
+                                                </p>
+                                                <p><span class="fw-bold">Intensidad:</span> {{ "%.0f"|format(result.analysis_results.sentiment_analysis.strength * 100) }}%</p>
+                                            </div>
+                                        {% else %}
+                                            <p class="text-muted">No hay suficiente texto para analizar el sentimiento.</p>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <!-- Análisis de Color -->
+                                    <div class="col-md-6 mb-3">
+                                        <h5>Análisis de Color</h5>
+                                        {% if color_palette and color_palette|length > 0 %}
+                                            <div class="color-palette mb-2">
+                                                {% for color in color_palette %}
+                                                    <div class="color-swatch" style="background-color: {{ color }}" title="{{ color }}"></div>
+                                                {% endfor %}
+                                            </div>
+                                            {% if result.analysis_results and result.analysis_results.color_analysis %}
+                                                <p><span class="fw-bold">Tono dominante:</span> {{ result.analysis_results.color_analysis.dominant_tone|capitalize }}</p>
+                                            {% endif %}
+                                        {% else %}
+                                            <p class="text-muted">No se pudo analizar la paleta de colores.</p>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <!-- Tendencias -->
+                                    <div class="col-md-6 mb-3">
+                                        <h5>Factores de Tendencia</h5>
+                                        {% if result.analysis_results and result.analysis_results.trending_factors %}
+                                            <div class="trending-factors">
+                                                {% for factor in result.analysis_results.trending_factors %}
+                                                    <div class="trending-factor">
+                                                        <i class="fas fa-arrow-trend-up text-primary me-2"></i>{{ factor }}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            <p class="text-muted">No se identificaron factores de tendencia específicos.</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="results-section">
+                            <h3>Resultados del Análisis</h3>
+                            <ul>
+                                <li><strong>Brillo:</strong> <span style="color: {{ 'green' if result['image_features']['brightness'] > 0.5 else 'red' }}">{{ result['image_features']['brightness'] }}</span></li>
+                                <li><strong>Contraste:</strong> <span style="color: {{ 'green' if result['image_features']['contrast'] > 0.3 else 'red' }}">{{ result['image_features']['contrast'] }}</span></li>
+                                <li><strong>Saturación:</strong> <span style="color: {{ 'green' if result['image_features']['saturation'] > 0.3 else 'red' }}">{{ result['image_features']['saturation'] }}</span></li>
+                                <li><strong>Paleta de Colores:</strong>
+                                    <div>
+                                        {% for color in result['image_features']['color_palette'] %}
+                                            <span style="display: inline-block; width: 20px; height: 20px; background-color: {{ color }}; border: 1px solid #000;"></span>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                                <li><strong>Duración del Video:</strong> {{ result['image_features'].get('duration', 'N/A') }} segundos</li>
+                                <li><strong>Engagement Score:</strong> <span style="color: {{ 'green' if result['engagement_prediction'] > 0.6 else 'orange' if result['engagement_prediction'] > 0.3 else 'red' }}">{{ result['engagement_prediction'] }}</span></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Botones de Acción -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{{ url_for('analyze_content') }}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Analizar Nuevo Contenido
+                            </a>
+                            <button class="btn btn-primary" onclick="window.print()">
+                                <i class="fas fa-print me-2"></i>Imprimir Informe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>© 2025 IA Análisis de Redes Sociales</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

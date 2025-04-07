@@ -1,0 +1,484 @@
+[
+    {
+        "post_id": "post_10",
+        "platform": "Twitter",
+        "content_type": "video",
+        "caption": "Post simple 10 con #viral",
+        "hashtags": [
+            "#photooftheday",
+            "#photooftheday",
+            "#photooftheday",
+            "#branding"
+        ],
+        "engagement": 8675,
+        "likes": 3722,
+        "shares": 4953,
+        "date_posted": "2025-03-13T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.647051106724928,
+            "contrast": 0.3827814549239074,
+            "color_palette": [
+                "#6F3635",
+                "#549DBF",
+                "#DB2983"
+            ]
+        }
+    },
+    {
+        "post_id": "post_11",
+        "platform": "Twitter",
+        "content_type": "video",
+        "caption": "Post simple 11 con #photooftheday",
+        "hashtags": [
+            "#digitalmarketing",
+            "#branding",
+            "#marketing",
+            "#content"
+        ],
+        "engagement": 1115,
+        "likes": 777,
+        "shares": 338,
+        "date_posted": "2025-03-02T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.3361526620740892,
+            "contrast": 0.33410376031394146,
+            "color_palette": [
+                "#CBC463",
+                "#EC5C5B",
+                "#CBBBB1"
+            ]
+        }
+    },
+    {
+        "post_id": "post_12",
+        "platform": "Instagram",
+        "content_type": "image",
+        "caption": "Post simple 12 con #funny",
+        "hashtags": [
+            "#photooftheday",
+            "#trending",
+            "#photooftheday"
+        ],
+        "engagement": 4871,
+        "likes": 352,
+        "shares": 4519,
+        "date_posted": "2025-03-13T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.6883205278019326,
+            "contrast": 0.31233824895629553,
+            "color_palette": [
+                "#C4F995",
+                "#4DA83C",
+                "#7BEF84"
+            ]
+        }
+    },
+    {
+        "post_id": "post_13",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 13 con #socialmedia",
+        "hashtags": [
+            "#marketing",
+            "#trending",
+            "#photooftheday",
+            "#meme"
+        ],
+        "engagement": 237,
+        "likes": 66,
+        "shares": 171,
+        "date_posted": "2025-03-05T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.36327352806336305,
+            "contrast": 0.4140998483677816,
+            "color_palette": [
+                "#A31DA6",
+                "#8C4A80",
+                "#06C9D7"
+            ]
+        }
+    },
+    {
+        "post_id": "post_14",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 14 con #viral",
+        "hashtags": [
+            "#trending",
+            "#marketing",
+            "#content"
+        ],
+        "engagement": 3896,
+        "likes": 1338,
+        "shares": 2558,
+        "date_posted": "2025-03-01T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.36562509836314416,
+            "contrast": 0.4900088687197897,
+            "color_palette": [
+                "#150F16",
+                "#977BAA",
+                "#381D1A"
+            ]
+        }
+    },
+    {
+        "post_id": "post_15",
+        "platform": "Twitter",
+        "content_type": "video",
+        "caption": "Post simple 15 con #photooftheday",
+        "hashtags": [
+            "#content",
+            "#marketing",
+            "#content",
+            "#digitalmarketing"
+        ],
+        "engagement": 6308,
+        "likes": 1076,
+        "shares": 5232,
+        "date_posted": "2025-03-24T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.5213896527898805,
+            "contrast": 0.5603724130872013,
+            "color_palette": [
+                "#CD5DAC",
+                "#BD858A",
+                "#264932"
+            ]
+        }
+    },
+    {
+        "post_id": "post_16",
+        "platform": "Instagram",
+        "content_type": "video",
+        "caption": "Post simple 16 con #digitalmarketing",
+        "hashtags": [
+            "#content"
+        ],
+        "engagement": 7353,
+        "likes": 1269,
+        "shares": 6084,
+        "date_posted": "2025-03-13T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.4935840935217749,
+            "contrast": 0.4043763428286588,
+            "color_palette": [
+                "#08FCFF",
+                "#A98352",
+                "#D24F30"
+            ]
+        }
+    },
+    {
+        "post_id": "post_17",
+        "platform": "Twitter",
+        "content_type": "video",
+        "caption": "Post simple 17 con #marketing",
+        "hashtags": [
+            "#photooftheday",
+            "#photooftheday"
+        ],
+        "engagement": 2163,
+        "likes": 877,
+        "shares": 1286,
+        "date_posted": "2025-03-26T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.6322793731176575,
+            "contrast": 0.7808933658973037,
+            "color_palette": [
+                "#5F6D9E",
+                "#11F030",
+                "#1C15B6"
+            ]
+        }
+    },
+    {
+        "post_id": "post_18",
+        "platform": "Twitter",
+        "content_type": "video",
+        "caption": "Post simple 18 con #viral",
+        "hashtags": [
+            "#meme",
+            "#branding",
+            "#digitalmarketing"
+        ],
+        "engagement": 8194,
+        "likes": 500,
+        "shares": 7694,
+        "date_posted": "2025-03-17T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.4829331305917277,
+            "contrast": 0.3714738110505854,
+            "color_palette": [
+                "#5695B2",
+                "#47F77D",
+                "#77223F"
+            ]
+        }
+    },
+    {
+        "post_id": "post_19",
+        "platform": "Facebook",
+        "content_type": "image",
+        "caption": "Post simple 19 con #branding",
+        "hashtags": [
+            "#funny",
+            "#photooftheday",
+            "#digitalmarketing",
+            "#trending",
+            "#branding"
+        ],
+        "engagement": 8818,
+        "likes": 5913,
+        "shares": 2905,
+        "date_posted": "2025-03-02T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.20893558337286405,
+            "contrast": 0.5667609832176614,
+            "color_palette": [
+                "#5CE3D9",
+                "#E51B51",
+                "#F15C0F"
+            ]
+        }
+    },
+    {
+        "post_id": "post_20",
+        "platform": "Instagram",
+        "content_type": "video",
+        "caption": "Post simple 20 con #marketing",
+        "hashtags": [
+            "#photooftheday",
+            "#trending"
+        ],
+        "engagement": 7206,
+        "likes": 3032,
+        "shares": 4174,
+        "date_posted": "2025-03-04T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.34208215886444193,
+            "contrast": 0.3378861426997838,
+            "color_palette": [
+                "#61C805",
+                "#79C332",
+                "#504C3D"
+            ]
+        }
+    },
+    {
+        "post_id": "post_21",
+        "platform": "Instagram",
+        "content_type": "image",
+        "caption": "Post simple 21 con #photooftheday",
+        "hashtags": [
+            "#viral",
+            "#content",
+            "#digitalmarketing",
+            "#viral"
+        ],
+        "engagement": 5875,
+        "likes": 37,
+        "shares": 5838,
+        "date_posted": "2025-02-28T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.4010115625001441,
+            "contrast": 0.6669364738871579,
+            "color_palette": [
+                "#D601DC",
+                "#B98F1D",
+                "#9D346F"
+            ]
+        }
+    },
+    {
+        "post_id": "post_22",
+        "platform": "Instagram",
+        "content_type": "video",
+        "caption": "Post simple 22 con #digitalmarketing",
+        "hashtags": [
+            "#trending",
+            "#content"
+        ],
+        "engagement": 6583,
+        "likes": 5119,
+        "shares": 1464,
+        "date_posted": "2025-03-19T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.7222234094623237,
+            "contrast": 0.6009199621401433,
+            "color_palette": [
+                "#A4BE35",
+                "#A0FEE7",
+                "#436AAC"
+            ]
+        }
+    },
+    {
+        "post_id": "post_23",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 23 con #viral",
+        "hashtags": [
+            "#trending",
+            "#funny"
+        ],
+        "engagement": 3823,
+        "likes": 1318,
+        "shares": 2505,
+        "date_posted": "2025-03-29T12:55:16.347043",
+        "image_features": {
+            "brightness": 0.3907504640197961,
+            "contrast": 0.6751793961306398,
+            "color_palette": [
+                "#0D8B21",
+                "#51209E",
+                "#A1D9DA"
+            ]
+        }
+    },
+    {
+        "post_id": "post_24",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 24 con #marketing",
+        "hashtags": [
+            "#photooftheday"
+        ],
+        "engagement": 2761,
+        "likes": 2325,
+        "shares": 436,
+        "date_posted": "2025-03-17T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.4149321663323388,
+            "contrast": 0.4269713859055397,
+            "color_palette": [
+                "#FAA2C1",
+                "#FB63FA",
+                "#55739D"
+            ]
+        }
+    },
+    {
+        "post_id": "post_25",
+        "platform": "Facebook",
+        "content_type": "image",
+        "caption": "Post simple 25 con #funny",
+        "hashtags": [
+            "#socialmedia",
+            "#branding",
+            "#trending",
+            "#funny"
+        ],
+        "engagement": 3263,
+        "likes": 3102,
+        "shares": 161,
+        "date_posted": "2025-03-05T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.4049944267618756,
+            "contrast": 0.4590220811007909,
+            "color_palette": [
+                "#6FE25C",
+                "#1DB101",
+                "#8BF1FD"
+            ]
+        }
+    },
+    {
+        "post_id": "post_26",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 26 con #marketing",
+        "hashtags": [
+            "#photooftheday",
+            "#viral",
+            "#photooftheday",
+            "#digitalmarketing",
+            "#branding"
+        ],
+        "engagement": 891,
+        "likes": 23,
+        "shares": 868,
+        "date_posted": "2025-03-13T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.8940105403058167,
+            "contrast": 0.5168367357867745,
+            "color_palette": [
+                "#61BF31",
+                "#95BF64",
+                "#0CA6D2"
+            ]
+        }
+    },
+    {
+        "post_id": "post_27",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 27 con #trending",
+        "hashtags": [
+            "#meme",
+            "#digitalmarketing",
+            "#content"
+        ],
+        "engagement": 4584,
+        "likes": 2906,
+        "shares": 1678,
+        "date_posted": "2025-03-28T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.5159206733840048,
+            "contrast": 0.7751910733967702,
+            "color_palette": [
+                "#1EFBB2",
+                "#82A4F6",
+                "#709B80"
+            ]
+        }
+    },
+    {
+        "post_id": "post_28",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 28 con #photooftheday",
+        "hashtags": [
+            "#funny",
+            "#trending"
+        ],
+        "engagement": 595,
+        "likes": 222,
+        "shares": 373,
+        "date_posted": "2025-03-03T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.762660710218656,
+            "contrast": 0.7507986699119522,
+            "color_palette": [
+                "#357770",
+                "#8D321E",
+                "#95AE9C"
+            ]
+        }
+    },
+    {
+        "post_id": "post_29",
+        "platform": "Twitter",
+        "content_type": "image",
+        "caption": "Post simple 29 con #viral",
+        "hashtags": [
+            "#funny",
+            "#digitalmarketing",
+            "#viral",
+            "#viral"
+        ],
+        "engagement": 7475,
+        "likes": 477,
+        "shares": 6998,
+        "date_posted": "2025-03-01T12:55:16.348046",
+        "image_features": {
+            "brightness": 0.6991948608760795,
+            "contrast": 0.39781749257872884,
+            "color_palette": [
+                "#AA4751",
+                "#5462F9",
+                "#045DF2"
+            ]
+        }
+    }
+]

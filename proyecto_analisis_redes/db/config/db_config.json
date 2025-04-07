@@ -1,0 +1,10 @@
+{
+    "db_name": "social_media_analytics",
+    "collections": [
+        "posts",
+        "processed_content",
+        "test_content",
+        "analysis_results"
+    ],
+    "connection_string": "mongodb://localhost:27017/"
+}

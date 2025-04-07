@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenar Modelo - Servicio de analítica avanzada e IA en marketing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-chart-line me-2"></i>Servicio de analítica avanzada e IA en marketing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/upload">Subir Contenido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/content">Ver Contenido</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title mb-3">Entrenamiento del Modelo IA</h1>
+            <p class="hero-subtitle mb-4">Prepara tu modelo de inteligencia artificial para predecir el engagement de tus publicaciones</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Mensajes de flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show mb-4" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Tarjeta de Entrenamiento -->
+                <div class="card content-card mb-4">
+                    <div class="card-header py-3">
+                        <h3 class="mb-0"><i class="fas fa-brain me-2"></i>Entrenamiento del Modelo</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="status-card mb-4">
+                            <h4 class="mb-2" id="modelStatus">Estado: <span class="badge bg-secondary">No iniciado</span></h4>
+                            <p id="statusDescription">Inicia el entrenamiento del modelo para mejorar las predicciones de engagement.</p>
+                        </div>
+                        
+                        <div id="progressSection" style="display: none;">
+                            <h5>Progreso total del entrenamiento</h5>
+                            <div class="progress mb-1">
+                                <div id="totalProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                            </div>
+                            <div class="text-end mb-3">
+                                <span id="totalProgressText">0%</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mb-3">
+                                <div><strong>Época actual:</strong> <span id="currentEpoch">0</span>/<span id="totalEpochs">10</span></div>
+                                <div><strong>Tiempo restante:</strong> <span id="remainingTime">--:--</span></div>
+                            </div>
+                            
+                            <h5 class="mt-4">Progreso de la época actual</h5>
+                            <div class="progress mb-1">
+                                <div id="epochProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                            </div>
+                            <div class="text-end mb-3">
+                                <span id="epochProgressText">0%</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button id="startTrainingBtn" class="btn btn-success">
+                                <i class="fas fa-play me-2"></i>Iniciar Entrenamiento
+                            </button>
+                           
+                            <button id="cancelTrainingBtn" class="cancel-btn" disabled>
+                                <i class="fas fa-stop-circle"></i>
+                                <span>Cancelar Entrenamiento</span>
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="cancelConfirmModal" class="confirm-modal">
+                    <div class="modal-content1">
+                      <div class="modal-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Cancelar Entrenamiento</h3>
+                      </div>
+                      <div class="modal-body">
+                        <p>¿Estás seguro de que deseas cancelar el entrenamiento en curso? Todo el progreso se perderá y no podrás retomarlo.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button id="continueTrainingBtn" class="btn-continue">Continuar Entrenamiento</button>
+                        <button id="confirmCancelBtn" class="btn-cancel-action">Cancelar Entrenamiento</button>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Tarjeta de Métricas -->
+                <div id="metricsCard" class="card content-card mb-4" style="display: none;">
+                    <div class="card-header py-3">
+                        <h3 class="mb-0"><i class="fas fa-chart-line me-2"></i>Métricas del Modelo</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="metric-card">
+                                    <h5>Error Medio Absoluto (MAE)</h5>
+                                    <div class="metric-value" id="maeValue">0.00</div>
+                                    <p class="text-muted">Diferencia promedio entre predicciones y valores reales</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="metric-card">
+                                    <h5>Error Cuadrático Medio (MSE)</h5>
+                                    <div class="metric-value" id="mseValue">0.00</div>
+                                    <p class="text-muted">Promedio de los errores al cuadrado</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="metric-card">
+                                    <h5>Precisión del Modelo</h5>
+                                    <div class="metric-value" id="accuracyValue">0%</div>
+                                    <p class="text-muted">Porcentaje de predicciones correctas</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="metric-card">
+                                    <h5>Tiempo de Entrenamiento</h5>
+                                    <div class="metric-value" id="trainingTime">00:00</div>
+                                    <p class="text-muted">Tiempo total del proceso de entrenamiento</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Tarjeta de Información del Dataset -->
+                <div class="card content-card mb-4">
+                    <div class="card-header py-3">
+                        <h3 class="mb-0"><i class="fas fa-database me-2"></i>Información del Dataset</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div id="datasetInfo">
+                            <p><strong>Estado de los datos:</strong> <span id="dataStatus">Cargando...</span></p>
+                            <p><strong>Total de ejemplos:</strong> <span id="totalExamples">-</span></p>
+                            <p><strong>Ejemplos de entrenamiento:</strong> <span id="trainingExamples">-</span></p>
+                            <p><strong>Ejemplos de validación:</strong> <span id="validationExamples">-</span></p>
+                            <p><strong>Características:</strong> <span id="featureCount">-</span></p>
+                        </div>
+                        <hr>
+                        <div class="d-grid">
+                            <button id="checkDataBtn" class="btn btn-outline-primary">
+                                <i class="fas fa-sync-alt me-2"></i>Actualizar Información
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Configuración del Modelo -->
+                <div class="card content-card mb-4">
+                    <div class="card-header py-3">
+                        <h3 class="mb-0"><i class="fas fa-cogs me-2"></i>Configuración</h3>
+                        <button type="button" class="btn btn-sm btn-outline-info" id="helpButton" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fas fa-question-circle me-1"></i>Ayuda
+                        </button>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="modelConfigForm">
+                            <div class="mb-3">
+                                <label for="epochsInput" class="form-label">Épocas de entrenamiento</label>
+                                <input type="number" class="form-control" id="epochsInput" value="10" min="1" max="100">
+                            </div>
+                            <div class="mb-3">
+                                <label for="batchSizeInput" class="form-label">Tamaño de lote (batch size)</label>
+                                <select class="form-select" id="batchSizeInput">
+                                    <option value="16">16</option>
+                                    <option value="32" selected>32</option>
+                                    <option value="64">64</option>
+                                    <option value="128">128</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="learningRateInput" class="form-label">Tasa de aprendizaje</label>
+                                <input type="number" class="form-control" id="learningRateInput" value="0.001" step="0.0001" min="0.0001" max="0.1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationSplitInput" class="form-label">Partición de validación</label>
+                                <select class="form-select" id="validationSplitInput">
+                                    <option value="0.1">10%</option>
+                                    <option value="0.2" selected>20%</option>
+                                    <option value="0.3">30%</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de Ayuda -->
+            <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered"> <!-- Centrado verticalmente -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="helpModalLabel">Ayuda de Parámetros</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="accordion" id="parameterHelpAccordion">
+                                <!-- Épocas -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEpochs">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEpochs" aria-expanded="true" aria-controls="collapseEpochs">
+                                            Épocas de entrenamiento
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEpochs" class="accordion-collapse collapse show" aria-labelledby="headingEpochs" data-bs-parent="#parameterHelpAccordion">
+                                        <div class="accordion-body">
+                                            <p><strong>Definición:</strong> Una época es un ciclo completo a través de todo el conjunto de datos de entrenamiento. El modelo ve todos los ejemplos una vez por época.</p>
+                                            <p><strong>Importancia:</strong> Más épocas permiten al modelo aprender patrones más complejos, pero demasiadas pueden causar sobreajuste (el modelo memoriza los datos en lugar de generalizar).</p>
+                                            <p><strong>Valores típicos:</strong> Entre 5 y 50, dependiendo del tamaño del dataset y la complejidad del problema.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- Batch Size -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingBatchSize">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBatchSize" aria-expanded="false" aria-controls="collapseBatchSize">
+                                                Tamaño de lote (batch size)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseBatchSize" class="accordion-collapse collapse" aria-labelledby="headingBatchSize" data-bs-parent="#parameterHelpAccordion">
+                                            <div class="accordion-body">
+                                                <p><strong>Definición:</strong> Número de ejemplos que el modelo procesa antes de actualizar sus parámetros internos.</p>
+                                                <p><strong>Importancia:</strong> Batches más pequeños permiten actualizaciones más frecuentes pero pueden hacer el entrenamiento más inestable. Batches más grandes suelen dar una dirección de aprendizaje más estable.</p>
+                                                <p><strong>Valores disponibles:</strong></p>
+                                                <ul>
+                                                    <li><strong>16:</strong> Para datasets pequeños o cuando se tiene poca memoria.</li>
+                                                    <li><strong>32:</strong> Un buen equilibrio para la mayoría de casos.</li>
+                                                    <li><strong>64:</strong> Para datasets más grandes y cuando se busca mejor generalización.</li>
+                                                    <li><strong>128:</strong> Para datasets muy grandes y cuando se tiene suficiente memoria.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Learning Rate -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingLearningRate">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLearningRate" aria-expanded="false" aria-controls="collapseLearningRate">
+                                                Tasa de aprendizaje
+                                            </button>
+                                        </h2>
+                                        <div id="collapseLearningRate" class="accordion-collapse collapse" aria-labelledby="headingLearningRate" data-bs-parent="#parameterHelpAccordion">
+                                            <div class="accordion-body">
+                                                <p><strong>Definición:</strong> Determina cuánto cambian los parámetros del modelo en cada actualización.</p>
+                                                <p><strong>Importancia:</strong> Una tasa muy alta puede hacer que el entrenamiento sea inestable o no converja; una tasa muy baja puede hacer que el entrenamiento sea demasiado lento.</p>
+                                                <p><strong>Valores típicos:</strong> Entre 0.0001 y 0.01. El valor por defecto de 0.001 suele funcionar bien para muchos casos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Validation Split -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingValidationSplit">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseValidationSplit" aria-expanded="false" aria-controls="collapseValidationSplit">
+                                                Partición de validación
+                                            </button>
+                                        </h2>
+                                        <div id="collapseValidationSplit" class="accordion-collapse collapse" aria-labelledby="headingValidationSplit" data-bs-parent="#parameterHelpAccordion">
+                                            <div class="accordion-body">
+                                                <p><strong>Definición:</strong> Porcentaje de datos que se reservan para validar el rendimiento del modelo durante el entrenamiento.</p>
+                                                <p><strong>Importancia:</strong> Permite evaluar si el modelo está generalizando bien o si está sobreajustando.</p>
+                                                <p><strong>Valores disponibles:</strong></p>
+                                                <ul>
+                                                    <li><strong>10%:</strong> Cuando tienes muchos datos y quieres maximizar los ejemplos de entrenamiento.</li>
+                                                    <li><strong>20%:</strong> Valor equilibrado recomendado para la mayoría de casos.</li>
+                                                    <li><strong>30%:</strong> Cuando tienes pocos datos y necesitas una evaluación más robusta.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+        <!-- Consola de Logs -->
+        <div class="card content-card mb-4">
+            <div class="card-header py-3">
+                <h3 class="mb-0"><i class="fas fa-terminal me-2"></i>Registro de Entrenamiento</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="log-console" id="trainingLog">
+                    <div class="log-line log-info">[INFO] Sistema listo para iniciar entrenamiento</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Servicio de analítica avanzada e IA en marketing</h4>
+                    <p>Una solución avanzada de análisis mediante IA para maximizar el impacto de tus campañas en redes sociales.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white">Inicio</a></li>
+                     
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ia@ciiia.mx</li>
+                        <li><i class="fas fa-phone me-2"></i>(123) 456-7890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="background-color: rgba(255,255,255,0.2);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Servicio de analítica avanzada e IA en marketing. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            //Referencias a elementos DOM
+            const startTrainingBtn = document.getElementById('startTrainingBtn');
+            const cancelTrainingBtn = document.getElementById('cancelTrainingBtn');
+            const checkDataBtn = document.getElementById('checkDataBtn');
+            const modelStatus = document.getElementById('modelStatus');
+            const statusDescription = document.getElementById('statusDescription');
+            const progressSection = document.getElementById('progressSection');
+            const totalProgress = document.getElementById('totalProgress');
+            const currentEpoch = document.getElementById('currentEpoch');
+            const totalEpochs = document.getElementById('totalEpochs');
+            const remainingTime = document.getElementById('remainingTime');
+            const epochProgress = document.getElementById('epochProgress');
+            const trainingLog = document.getElementById('trainingLog');
+            const metricsCard = document.getElementById('metricsCard');
+            
+            //Variables de control
+            let progressInterval;
+            let isTraining = false;
+                //Función para mostrar el modal de confirmación
+            cancelTrainingBtn.addEventListener('click', function() {
+                if (!isTraining) return;
+                
+                //Mostrar el modal en lugar de usar confirm()
+                cancelConfirmModal.style.display = 'flex';
+            });
+            
+            //Continuar entrenamiento (cerrar modal)
+            continueTrainingBtn.addEventListener('click', function() {
+                cancelConfirmModal.style.display = 'none';
+            });
+            
+            //Cerrar modal al hacer clic fuera del contenido
+            cancelConfirmModal.addEventListener('click', function(e) {
+                if (e.target === cancelConfirmModal) {
+                    cancelConfirmModal.style.display = 'none';
+                }
+            });
+            
+            //Confirmar cancelación
+            confirmCancelBtn.addEventListener('click', function() {
+                //Cambiar el botón a estado de carga
+                confirmCancelBtn.innerHTML = '<span class="cancel-loading"></span> Cancelando...';
+                confirmCancelBtn.disabled = true;
+                
+                addLogMessage('Cancelando entrenamiento...', 'warning');
+                
+                //Enviar solicitud para cancelar entrenamiento
+                fetch('/api/cancel_training', {
+                    method: 'POST',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        addLogMessage('Entrenamiento cancelado correctamente', 'warning');
+                        
+                        //Mostrar una alerta bonita con SweetAlert si está disponible
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Entrenamiento Cancelado',
+                                text: 'El entrenamiento ha sido cancelado correctamente.',
+                                confirmButtonColor: '#3085d6'
+                            });
+                        }
+                    } else {
+                        addLogMessage(`Error al cancelar entrenamiento: ${data.error}`, 'error');
+                        
+                        //Mostrar error con SweetAlert si está disponible
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: `Error al cancelar entrenamiento: ${data.error}`,
+                                confirmButtonColor: '#3085d6'
+                            });
+                        }
+                    }
+                })
+                .catch(error => {
+                    addLogMessage(`Error de conexión: ${error.message}`, 'error');
+                    
+                    //Mostrar error de conexión con SweetAlert si está disponible
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error de Conexión',
+                            text: error.message,
+                            confirmButtonColor: '#3085d6'
+                        });
+                    }
+                })
+                .finally(() => {
+                    clearInterval(progressInterval);
+                    resetTrainingUI();
+                    cancelConfirmModal.style.display = 'none';
+                    
+                    //Resetear el botón
+                    confirmCancelBtn.innerHTML = 'Cancelar Entrenamiento';
+                    confirmCancelBtn.disabled = false;
+                });
+            });
+            function updateTrainingStartUI() {
+                cancelTrainingBtn.disabled = false;
+                //Otros cambios de UI cuando el entrenamiento comienza
+            }
+             //Función para resetear UI cuando el entrenamiento termina
+            function resetTrainingUI() {
+                cancelTrainingBtn.disabled = true;
+                //Otros resets de UI cuando el entrenamiento termina/cancela
+            }
+            
+            //Función para actualizar información del dataset
+            checkDataBtn.addEventListener('click', function() {
+                addLogMessage('Solicitando información actualizada del dataset...', 'info');
+                document.getElementById('dataStatus').textContent = 'Actualizando...';
+                
+                //Solicitud AJAX real
+                fetch('/api/get_dataset_info')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const stats = data.data;
+                            document.getElementById('dataStatus').textContent = stats.status;
+                            document.getElementById('totalExamples').textContent = stats.total_examples;
+                            document.getElementById('trainingExamples').textContent = stats.training_examples;
+                            document.getElementById('validationExamples').textContent = stats.validation_examples;
+                            document.getElementById('featureCount').textContent = `${stats.feature_count} ${stats.feature_description}`;
+                            
+                            addLogMessage('Información del dataset actualizada correctamente', 'success');
+                        } else {
+                            addLogMessage(`Error al obtener información del dataset: ${data.error}`, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        addLogMessage(`Error de conexión: ${error.message}`, 'error');
+                    });
+            });
+            
+            //Iniciar información del dataset automáticamente
+            checkDataBtn.click();
+            
+            //Iniciar entrenamiento
+            startTrainingBtn.addEventListener('click', function() {
+                if (isTraining) return;
+                
+                //Obtener configuración
+                const epochs = parseInt(document.getElementById('epochsInput').value);
+                const batchSize = parseInt(document.getElementById('batchSizeInput').value);
+                const learningRate = parseFloat(document.getElementById('learningRateInput').value);
+                const validationSplit = parseFloat(document.getElementById('validationSplitInput').value);
+                
+                //Validar campos
+                if (epochs < 1 || isNaN(epochs)) {
+                    alert('Por favor ingresa un número válido de épocas');
+                    return;
+                }
+                
+                //Iniciar entrenamiento
+                isTraining = true;
+                
+                //Actualizar UI
+                startTrainingBtn.disabled = true;
+                cancelTrainingBtn.disabled = false;
+                progressSection.style.display = 'block';
+                modelStatus.innerHTML = 'Estado: <span class="badge bg-warning">En progreso</span>';
+                statusDescription.textContent = 'El modelo está siendo entrenado. Este proceso puede tomar varios minutos dependiendo del tamaño del dataset.';
+                totalEpochs.textContent = epochs;
+                currentEpoch.textContent = '0';
+                
+                //Registrar inicio
+                addLogMessage('Iniciando entrenamiento del modelo...', 'info');
+                addLogMessage(`Configuración: ${epochs} épocas, batch size ${batchSize}, learning rate ${learningRate}, validación ${validationSplit*100}%`, 'info');
+                
+                //Enviar solicitud para iniciar entrenamiento
+                fetch('/api/train_model', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        epochs: epochs,
+                        batch_size: batchSize,
+                        learning_rate: learningRate,
+                        validation_split: validationSplit
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        addLogMessage('El entrenamiento se ha iniciado en el servidor', 'success');
+                        startProgressMonitoring();
+                    } else {
+                        addLogMessage(`Error al iniciar entrenamiento: ${data.error}`, 'error');
+                        resetTrainingUI();
+                    }
+                })
+                .catch(error => {
+                    addLogMessage(`Error de conexión: ${error.message}`, 'error');
+                    resetTrainingUI();
+                });
+            });
+            
+          //Monitorear el progreso del entrenamiento
+            function startProgressMonitoring() {
+                if (progressInterval) clearInterval(progressInterval);
+                
+                //Añadir mensaje de inicio al log
+                addLogMessage('Iniciando monitoreo de progreso...', 'info');
+                
+                progressInterval = setInterval(function() {
+                    fetch('/api/get_training_progress')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                //Mensaje de debug
+                                console.log("Progress update received:", data);
+                                
+                                //Actualizar la UI con el progreso
+                                updateProgress(data.data);
+                                
+                                //Si el entrenamiento ha terminado, detener el monitoreo
+                                if (!data.is_training && data.data.total_progress >= 100) {
+                                    clearInterval(progressInterval);
+                                    completeTraining(data.data.metrics);
+                                    addLogMessage('Entrenamiento completado', 'success');
+                                }
+                            } else {
+                                addLogMessage(`Error al obtener progreso: ${data.error}`, 'error');
+                            }
+                        })
+                        .catch(error => {
+                            addLogMessage(`Error de conexión: ${error.message}`, 'error');
+                            console.error("Progress monitoring error:", error);
+                        });
+                }, 1000); //Actualizar cada segundo
+            }
+
+            //Actualizar UI con datos de progreso
+            function updateProgress(progress) {
+                console.log("Updating UI with progress:", progress);
+                
+                //Actualizar progreso
+                currentEpoch.textContent = progress.current_epoch;
+                totalEpochs.textContent = progress.total_epochs;
+                epochProgress.style.width = `${progress.epoch_progress}%`;
+                totalProgress.style.width = `${progress.total_progress}%`;
+                remainingTime.textContent = progress.remaining_time || "--:--";
+                
+                //Actualizar texto de progreso
+                document.getElementById('epochProgressText').textContent = `${progress.epoch_progress}%`;
+                document.getElementById('totalProgressText').textContent = `${progress.total_progress}%`;
+                
+                //Actualizar logs
+                if (progress.training_logs && progress.training_logs.length > 0) {
+                    //Obtener el último mensaje del log
+                    const lastLog = document.querySelector('#trainingLog .log-line:last-child');
+                    const lastLogText = lastLog ? lastLog.textContent : '';
+                    
+                    //Añadir nuevos logs que no están ya mostrados
+                    for (const log of progress.training_logs) {
+                        const logText = `[${log.timestamp}] ${log.message}`;
+                        if (!lastLogText.includes(log.message)) {
+                            addLogMessage(log.message, log.type, log.timestamp);
+                        }
+                    }
+                }
+                
+                //Si el entrenamiento ha terminado y tenemos métricas
+                if (progress.total_progress >= 100 && progress.metrics && progress.metrics.mae !== undefined) {
+                    completeTrainingWithMetrics(progress.metrics);
+                }
+            }
+                        
+           
+            
+           
+            //Completar entrenamiento con métricas reales
+            function completeTrainingWithMetrics(metrics) {
+                isTraining = false;
+                modelStatus.innerHTML = 'Estado: <span class="badge bg-success">Completado</span>';
+                statusDescription.textContent = 'El modelo ha sido entrenado exitosamente y está listo para hacer predicciones.';
+                
+                //Mostrar métricas reales
+                metricsCard.style.display = 'block';
+                document.getElementById('maeValue').textContent = metrics.mae.toFixed(4);
+                document.getElementById('mseValue').textContent = metrics.mse.toFixed(4);
+                document.getElementById('accuracyValue').textContent = `${(metrics.accuracy * 100).toFixed(1)}%`;
+                document.getElementById('trainingTime').textContent = metrics.training_time;
+                
+                //Resetear UI
+                startTrainingBtn.disabled = false;
+                cancelTrainingBtn.disabled = true;
+            }
+            
+            //Completar entrenamiento (usado cuando termina sin métricas disponibles)
+            function completeTraining() {
+                isTraining = false;
+                modelStatus.innerHTML = 'Estado: <span class="badge bg-success">Completado</span>';
+                statusDescription.textContent = 'El modelo ha sido entrenado exitosamente y está listo para hacer predicciones.';
+                
+                //Resetear UI
+                startTrainingBtn.disabled = false;
+                cancelTrainingBtn.disabled = true;
+            }
+            
+            //Resetear UI después de cancelar
+            function resetTrainingUI() {
+                isTraining = false;
+                startTrainingBtn.disabled = false;
+                cancelTrainingBtn.disabled = true;
+                modelStatus.innerHTML = 'Estado: <span class="badge bg-danger">Cancelado</span>';
+                statusDescription.textContent = 'El entrenamiento fue cancelado. Puedes iniciar nuevamente cuando estés listo.';
+            }
+            
+            //Añadir mensaje al log
+            function addLogMessage(message, type, timestamp = null) {
+                const timeStr = timestamp || new Date().toLocaleTimeString();
+                const logLine = document.createElement('div');
+                logLine.className = `log-line log-${type}`;
+                logLine.textContent = `[${timeStr}] ${message}`;
+                trainingLog.appendChild(logLine);
+                trainingLog.scrollTop = trainingLog.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
