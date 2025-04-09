@@ -26,12 +26,18 @@ Tu estructura debe quedar así:
 2. Ejecuta:  python -m venv venv
 
 🟢 Activar el entorno virtual
-1. Desde PowerShell:                 .\venv\Scripts\Activate
-2. Desde CMD:                         venv\Scripts\activate
+1. Desde PowerShell:
+
+   .\venv\Scripts\Activate
+   
+3. Desde CMD:
+
+   venv\Scripts\activate
 
 📦 Instalar dependencias
 
 Una vez activado el entorno virtual:  
+
                                     pip install -r requirements.txt
 
 🍃 Instalar MongoDB (Windows)
@@ -51,6 +57,7 @@ Con el entorno virtual activo, y ubicado en la carpeta principal, ejecuta:
 🚀 Ejecutar la aplicación
 
 Una vez creada la base de datos, ejecuta:
+
                                   py .\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py
                                   
 Esto iniciará la aplicación Flask. Deberás ver un mensaje como: Running on http://127.0.0.1:5000/
