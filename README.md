@@ -1,4 +1,5 @@
 🧠 Análisis de Imágenes y Videos para Campañas en Redes Sociales
+
 Este proyecto permite procesar imágenes y videos, entrenar un modelo de IA y analizar contenido para redes sociales. A continuación se describen los pasos para instalar y ejecutar el sistema.
 
 📁 Estructura del Proyecto
@@ -6,9 +7,11 @@ Este proyecto permite procesar imágenes y videos, entrenar un modelo de IA y an
 2. Dentro de esa carpeta, crea una subcarpeta llamada proyecto_analisis_redes.
 3. Dentro de proyecto_analisis_redes, clona el repositorio de GitHub o copia todo el contenido del proyecto.
 4. Mueve los siguientes archivos a la carpeta raíz (la principal):
+   
   Archivo app
   Archivo estructura
   Archivo requirements.txt
+  
 Tu estructura debe quedar así:
 /MiCarpetaPrincipal
 │
@@ -27,6 +30,7 @@ Tu estructura debe quedar así:
 2. Desde CMD:                         venv\Scripts\activate
 
 📦 Instalar dependencias
+
 Una vez activado el entorno virtual:  
                                     pip install -r requirements.txt
 
@@ -45,8 +49,10 @@ Con el entorno virtual activo, y ubicado en la carpeta principal, ejecuta:
                                   py .\proyecto_analisis_redes\proyecto_analisis_redes\db\setup_db.py
 
 🚀 Ejecutar la aplicación
+
 Una vez creada la base de datos, ejecuta:
                                   py .\proyecto_analisis_redes\proyecto_analisis_redes\app\app.py
+                                  
 Esto iniciará la aplicación Flask. Deberás ver un mensaje como: Running on http://127.0.0.1:5000/
 
 
