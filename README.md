@@ -39,7 +39,9 @@ Una vez activado el entorno virtual:
   O busca "MongoDB Server" en servicios de Windows y asegúrate de que esté en ejecución.
 
 🗂️ Inicializar la base de datos
+
 Con el entorno virtual activo, y ubicado en la carpeta principal, ejecuta:
+
                                   py .\proyecto_analisis_redes\proyecto_analisis_redes\db\setup_db.py
 
 🚀 Ejecutar la aplicación
